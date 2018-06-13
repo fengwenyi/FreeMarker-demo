@@ -1,0 +1,17 @@
+# freemarker
+spring:
+      freemarker:
+                template-loader-path: classpath:/templates/
+                cache: false
+                charset: UTF-8
+                check-template-location: true
+                content-type: text/html
+                expose-request-attributes: true
+                expose-session-attributes: true
+                request-context-attribute: request
+                suffix: .html
+                settings:
+                      #number_format: '0.##'   #数字格式化，无小数点，如果有小数，只保留两位小数
+                      number_format: '0.#############################################'
+                      date_format: 'yyyy_MM_dd HH:mm:ss' # 这个是对java.sql.Date起作用
+                      # boolean_format: 'Y, N' # 一般不这么配置，因为我们需要逻辑值，如果需要，我们可以在需要的地方将Boolean->String

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取值</title>
+</head>
+<body>
+
+<center>
+<table border="1">
+    <tr>
+        <th width="200">Type</th>
+        <th width="300">Value</th>
+    </tr>
+
+    <tr>
+        <td align="center">Integer</td>
+        <td align="center"><font color="red">${intVar}</font></td>
+    </tr>
+    <tr>
+        <td align="center">Long</td>
+        <td align="center"><font color="red">${longVar}</font></td>
+    </tr>
+    <tr>
+        <td align="center">String</td>
+        <td align="center"><font color="red">${stringVar}</font></td>
+    </tr>
+    <tr>
+        <td align="center">Double</td>
+        <td align="center"><font color="red">${doubleVar}</font></td>
+    </tr>
+    <tr>
+        <td align="center">Boolean</td>
+        <td align="center"><font color="red">${booleanVar?string('Yes', 'No')}</font></td>
+    </tr>
+    <tr>
+        <td align="center">java.util.Date</td>
+        <td align="center"><font color="red">${dateUtilVar?string('yyyy/MM/dd HH:mm:ss')}</font></td>
+    </tr>
+    <tr>
+        <td align="center">java.sql.Date</td>
+        <td align="center"><font color="red">${dateSqlVar}</font></td>
+    </tr>
+    <tr>
+        <td align="center">null</td>
+        <td align="center"><font color="red">${nullVar!}</font></td>
+    </tr>
+    <tr>
+        <td align="center">null</td>
+        <td align="center"><font color="red">${nullVar! '-'}</font></td>
+    </tr>
+    <tr>
+        <td align="center">不存在的变量</td>
+        <td align="center"><font color="red">${notExist! '-'}</font></td>
+    </tr>
+</table>
+</center>
+<!--整数：${intVar}
+    长整数：${longVar}
+    字符串：${stringVar}
+    双精度：${doubleVar}
+    布尔值：${booleanVar}  //配置文件中的boolean_format的作用 yes,no
+    布尔值：${booleanVar?string('yes', 'no')} //boolean类型格式化
+    日期：${dateVar?string('yyyy-MM-dd HH:mm:ss')}  //配置文件中date_format的作用；（java.sql.date)-->
+
+</body>
+</html>
