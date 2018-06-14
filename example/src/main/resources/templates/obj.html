@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象、集合</title>
+</head>
+<body>
+<h3>对象</h3>
+    <#if user??>
+        ${user.id} - ${user.name} - ${user.age}
+    </#if>
+
+<h3>List</h3>
+    <#list list as k>
+        <p>${k.id} - ${k.name} - ${k.age}</p>
+    </#list>
+
+<h3>Map</h3>
+
+<p>1、获取map中的值</p>
+<p>${map['key3']}</p>
+<br>
+<p>2、获取map的keys</p>
+<#assign  keys=map?keys/>
+<#-- 遍历map 首选获取key的集合 -->
+<#list keys as key>
+<p>key:${key}-value:${map['${key}']}</p>
+</#list>
+</br>
+<p>3、直接遍历map的第二种方式</p>
+<#list map?keys as key>
+<p>key:${key}--value:${map["${key}"]}</p>
+</#list>
+</br>
+<p>4、直接遍历map的values</p>
+<#list map?values as value>
+<p>${value}</p>
+</#list>
+</body>
+</html>

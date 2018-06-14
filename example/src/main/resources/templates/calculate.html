@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的定义、赋值、运算</title>
+</head>
+<body>
+
+<h3>变量的赋值</h3>
+<#assign a = 110 />
+${a}
+
+<h3>算术运算</h3>
+（1）加法： ${x} + ${y} = ${x + y} <br/>
+
+（2）减法： ${x} - ${y} = ${x - y} <br/>
+
+（3）乘法： ${x} * ${y} = ${x * y} <br/>
+
+（4）除法： ${x} / ${y} = ${x / y} <br/>
+
+（5）取模： ${x} % ${y} = ${x % y} <br/>
+
+（6）获取除数的整数部分： ${x/y} => ${(x/y)?int} <br/><br/>
+
+<h3>比较操作（x=${x} y=${y}）</h3>
+（1）= 或 ==，测试两个值是否相等：
+<#if x = y> <#-- x == y 等价 x = y -->
+x == y
+<#else>
+x != y
+</#if>
+<br/>
+
+（2）!= 测试不相等：
+<#if x != y>
+x != y
+<#else>
+x == y
+</#if>
+<br/>
+
+（3）>：
+<#if x gt y>
+(x > y) = YES
+<#else>
+(x > y) = NO
+</#if>
+<br/>
+
+（4）>=：
+<#if x gte y>
+(x >= y) = YES
+<#else>
+(x >= y) = NO
+</#if>
+<br/>
+
+（5）<：
+<#if x lt y>
+(x < y) = YES
+<#else>
+(x < y) = NO
+</#if>
+<br/>
+
+（6）<=：
+<#if x lte y>
+(x <= y) = YES
+<#else>
+(x <= y) = NO
+</#if>
+<br/>
+
+<p>if 语法</p>
+<#assign b = 100 />
+b = ${b}
+<br>
+<#if b??>
+    <#if b &gt; 50>
+        b 大于 50
+    <#elseif b &lt; 50>
+        b 小于 50
+    <#else>
+        b 等于 50
+    </#if>
+</#if>
+
+<h3>逻辑运算（ T = <#if T> true <#else> false </#if>
+F = <#if F> true <#else> false </#if>）
+</h3>
+（1）逻辑或 || ：
+${T ? string("true", "false")} || ${F ? string("true", "false")} = ${ (T || F) ? string("yes", "no")}
+<br/>
+
+（2）逻辑与 && ：
+${T ? string("true", "false")} && ${F ? string("true", "false")} = ${ (T && F) ? string("yes", "no")}
+<br/>
+
+（3）逻辑非 ! ：
+!${T ? string("true", "false")}  = ${ (!T) ? string("yes", "no")}
+<br/>
+
+<h3>switch</h3>
+
+1、字符串
+
+<#switch 'small'>
+    <#case "small">
+        This will be processed if it is small
+        <#break>
+    <#case "medium">
+        This will be processed if it is medium
+        <#break>
+    <#case "large">
+        This will be processed if it is large
+        <#break>
+    <#default>
+        This will be processed if it is neither
+</#switch>
+
+<br>
+
+2、数字
+
+<#switch 1>
+    <#case 1>
+        1
+    <#case 2>
+        2
+    <#default>
+        d
+</#switch>
+
+</body>
+</html>
